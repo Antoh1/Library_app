@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="" accept-charset="UTF-8" role="form">
+      {{ form.csrf_token }}
+      <div>
+        Fill the Form To SignUP<br>
+        <p>{{ form.name(size=50, placeholder="Your Name") }} </p>
+        <p>{{ form.email(size=50, placeholder="Your Email Address") }} </p>
+        <p>{{ form.id_no(size=50, placeholder="Your ID Number") }} </p>
+        <p>{{ form.password(size=50, placeholder="Your Password") }} </p>
+        <p>{{ form.submit }}</p>
+      </div>
+    </form>
+{% endblock %}    
