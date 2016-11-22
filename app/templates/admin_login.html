@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Login To Access Library Services</h1><br>
+    <form method="POST" action="" accept-charset="UTF-8" role="form">
+    	{{ form.csrf_token }}
+    	<div>
+    		<p>{{form.email(size=30, placeholder='Admin email address')}}</p>
+    		<p>{{form.password(size=30, placeholder='Admin Password')}}</p>
+    		<p><input type="submit" value='Login'></p>
+    	</div>	
+              
+	</form>
+{% endblock %}
