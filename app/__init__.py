@@ -10,10 +10,11 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Configurations
+loginManager = LoginManager()
+loginManager.session_protection = 'strong'
+loginManager.init_app(app)
+loginManager.login_view = 'login'
 app.config.from_object('config')
-lm = LoginManager()
-lm.init_app(app)
-lm.login_view = 'login'
 
 # Define the database object which is imported
 # by modules and controllers
