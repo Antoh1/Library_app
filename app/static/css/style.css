@@ -1,0 +1,31 @@
+.body
+{
+	background-color: #caabf8;
+}
+.margin-top
+{
+	margin-top: 5px;
+}
+.no-margin
+{
+margin:0px; 	
+}
+.no-padding
+{ 
+	padding:0px; 
+}
+.footer
+{
+	background-color: #7c6fe6;
+	color: blue;
+	margin-top: 30px;
+	padding-top: 30px;
+}
+.margin
+{
+	margin: 5px;
+}
+.padding
+{
+	padding: 2px;
+}
