@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+		
+	    	<table border='1'>
+	    		<tr>
+	    			<td>Book Name<td>
+	    			<td>Book Description<td>
+	    			<td>Book Category<td>
+	    		</tr>
+	    		<tr><td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    	</table>
+	    <table border="1">
+            <thead>
+                <th>Book Name</th>
+                <th>Book Description</th>
+      			<th>Book Category</th>
+  			</thead>
+  			{% for book in books %}
+ 			<tbody>
+ 			    <tr>
+    				<td>{{ book.book_name }}</td>
+    				<td>{{ book.book_desc }}</td>
+    				<td>{{ book.book_category }}</td>
+  				</tr>
+			</tbody>
+			{% endfor %}
+		</table>
+	    
+
+</div>
+
+{% endblock %}
