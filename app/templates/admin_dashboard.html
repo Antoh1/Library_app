@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<form method="POST" action="" accept-charset="UTF-8" role="form">
+      {{ form.csrf_token }}
+<div>
+	<p>{{form.book_name(size=30, placeholder='Add Book Name')}}<br>
+	{{form.book_desc(size=30, placeholder='Book Overview')}}<br>
+	{{form.book_category(size=30, placeholder='Book Category')}}<br>
+    {{ form.submit }}</p>
+
+
+	<div>
+</form>		
+
+{% endblock %}
