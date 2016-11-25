@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Login To Access Library Services</h1><br>
+<div class="container panel panel-success margin-top">
+    <form method="POST" action="" accept-charset="UTF-8" role="form">
+    	{{ form.csrf_token }}
+    	<div class="container panel panel-success margin-top">
+    		<p>{{form.email(size=30, placeholder='Your email address')}}</p>
+    		<p>{{form.password(size=30, placeholder='Your Password')}}</p>
+    		<button type="submit" class="btn btn-success">Login</button>
+    	</div>	
+              
+	</form>
+</div>
+{% endblock %}
