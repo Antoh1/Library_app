@@ -56,7 +56,7 @@ def user_login():
         if user is not None and user.verify_password(user_form.password.data):
             login_user(user)
             session['logged_in']=True
-            flash('You are logged in')
+            flash('You are logged in as Library User')
             return redirect(url_for('.viewBooks'))
         flash('Invalid username or password.')    
         return render_template('user_login.html', form=user_form, error=error)
@@ -77,7 +77,7 @@ def admin_login():
                 error = 'Invalid login credentials, Try again'
             else:
                 session['logged_in']=True
-                flash('You are logged in')
+                flash('You are logged in as Library Admin')
                 return redirect(url_for('add_Book'))
         else:
             flash('Enter valid Admin email address and password combination')
