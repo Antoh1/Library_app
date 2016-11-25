@@ -1,16 +1,18 @@
 {% extends 'base.html'%}
 
 {% block content %}
+<div class="container panel panel-success margin-top">
 <form method="POST" action="" accept-charset="UTF-8" role="form">
       {{ form.csrf_token }}
 <div>
-	<p>{{form.book_name(size=30, placeholder='Add Book Name')}}<br>
-	{{form.book_desc(size=30, placeholder='Book Overview')}}<br>
-	{{form.book_category(size=30, placeholder='Book Category')}}<br>
-    {{ form.submit }}</p>
+	<span><h3>Book Name:</h3> <p>{{form.book_name(size=30, placeholder='Add Book Name')}}</p></span>
+	<span><h3>Description:</h3> <p>{{form.book_desc(size=30, placeholder='Book Overview')}}</p></span>
+	<span><h3>Category:</h3> <p>{{form.book_category(size=30, placeholder='Book Category')}}</p></span>
+	<button type="submit" class="btn btn-success">ADD</button>
 
 
 	<div>
-</form>		
+</form>
+</div>		
 
 {% endblock %}

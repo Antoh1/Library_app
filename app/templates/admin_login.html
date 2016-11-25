@@ -1,13 +1,15 @@
 {% extends 'base.html'%}
 {% block content %}
 <h1>Admin Panel Login</h1><br>
+<div class="container panel panel-success margin-top">
     <form method="POST" action="" accept-charset="UTF-8" role="form">
     	{{ form.csrf_token }}
     	<div>
     		<p>{{form.email(size=30, placeholder='Admin email address')}}</p>
     		<p>{{form.password(size=30, placeholder='Admin Password')}}</p>
-    		<p><input type="submit" value='Login'></p>
+    		<button type="submit" class="btn btn-success">Login</button>
     	</div>	
               
 	</form>
+</div>	
 {% endblock %}

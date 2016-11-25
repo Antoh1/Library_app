@@ -18,14 +18,23 @@
         <div class="collapse navbar-collapse navbar-right" id="bs-TSM-navbar-collapse-1">
           <ul class="nav navbar-nav nav-tabs">
             <li><a href="{{ url_for('signup') }}">SignUp</a></li>
-            <li><a href="#">REGISTER</a></li>
+            <li><a href="{{ url_for('user_login') }}">Login</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
           </ul>
         </div>
       </div>
       </nav>
     <div align="center" class="jumbotron">
     <div><h2>Library App:<h2></div>
-
+     {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li align="left"><h2 textcolor="red">{{ message }} <h2></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
     </div>
   </body>
