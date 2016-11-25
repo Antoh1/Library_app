@@ -4,6 +4,7 @@
 <div class="container panel panel-success margin-top">
 <form method="POST" action="" accept-charset="UTF-8" role="form">
       {{ form.csrf_token }}
+      <p><h2>Add New Books to the Library</h2></p>
 <div>
 	<span><h3>Book Name:</h3> <p>{{form.book_name(size=30, placeholder='Add Book Name')}}</p></span>
 	<span><h3>Description:</h3> <p>{{form.book_desc(size=30, placeholder='Book Overview')}}</p></span>
