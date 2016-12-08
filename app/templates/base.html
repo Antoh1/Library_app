@@ -17,9 +17,12 @@
         <div class="container-fluid">
         <div class="collapse navbar-collapse navbar-right" id="bs-TSM-navbar-collapse-1">
           <ul class="nav navbar-nav nav-tabs">
-            <li><a href="{{ url_for('signup') }}">SignUp</a></li>
-            <li><a href="{{ url_for('user_login') }}">Login</a></li>
+            {% if current_user.is_authenticated %}
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('user_login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">SignUp</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
