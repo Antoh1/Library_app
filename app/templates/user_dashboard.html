@@ -3,26 +3,17 @@
 {% block content %}
 <div class="container panel panel-danger margin-top">
 		<h2>These are the Books Available in the Library<h2>
-	    <table class="panel panel-warning margin-top">
-            <thead color='blue'>
-            	<th>Book ID</th>
-              <th>Book Name</th>
-              <th>Book Description</th>
-      			<th>Book Category</th>
-  			</thead>
-  			{% for book in books %}
- 			<tbody>
- 			    <tr>
- 			    	<td>{{ book.id }}</td>
-    				<td>{{ book.book_name }}</td>
-    				<td>{{ book.book_desc }}</td>
-    				<td>{{ book.book_category }}</td>
-  				</tr>
-			</tbody>
-			{% endfor %}
-		</table>
-	    
 
+		<div class="row">
+		{% for rec in books %}
+		<div class="container">
+		<div class="col-sm-1 col-sm-offset-0 panel panel-default">{{ rec.id }}</div>
+		<div class="col-sm-3 col-sm-offset-0 panel panel-default">{{ rec.book_name }}</div>
+		<div class="col-sm-3 col-sm-offset-0 panel panel-default">{{ rec.book_desc }}</div>
+		<div class="col-sm-3 col-sm-offset-0 panel panel-default">{{ rec.book_category }}</div>
+	    </div>
+		{% endfor %}
+	   </div>
 </div>
 
 {% endblock %}
