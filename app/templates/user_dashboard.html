@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
-
-{% block content %}
+{% block title %}Library_app | User Dashboard{% endblock %}
+{% block page_content %}
 <div class="container panel panel-danger margin-top">
-		<h2>These are the Books Available in the Library<h2>
+		<h2 class="text-info">These are the Books Available in the Library<h2>
 
+		<div class="row">
+			<div class="container">
+			<div class="text-success col-sm-2 col-sm-offset-0 panel panel-default">Book ID</div>
+			<div class="text-success col-sm-3 col-sm-offset-0 panel panel-default">Book Name</div>
+			<div class="text-success col-sm-3 col-sm-offset-0 panel panel-default">Book Description</div>
+			<div class="text-success col-sm-3 col-sm-offset-0 panel panel-default">Book Category</div>
+		    </div>
+		</div>
 		<div class="row">
 		{% for rec in books %}
 		<div class="container">
-		<div class="col-sm-1 col-sm-offset-0 panel panel-default">{{ rec.id }}</div>
+		<div class="col-sm-2 col-sm-offset-0 panel panel-default">{{ rec.id }}</div>
 		<div class="col-sm-3 col-sm-offset-0 panel panel-default">{{ rec.book_name }}</div>
 		<div class="col-sm-3 col-sm-offset-0 panel panel-default">{{ rec.book_desc }}</div>
 		<div class="col-sm-3 col-sm-offset-0 panel panel-default">{{ rec.book_category }}</div>
