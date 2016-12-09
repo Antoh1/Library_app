@@ -1,8 +1,10 @@
 # Import flask and template operators
 import os
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from config import basedir
+from flask_migrate import Migrate, MigrateCommand
 # Import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 
@@ -10,6 +12,10 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Configurations
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+bootstrap = Bootstrap(app)
+
 loginManager = LoginManager()
 loginManager.session_protection = 'strong'
 loginManager.init_app(app)
@@ -18,7 +24,6 @@ app.config.from_object('config')
 
 # Define the database object which is imported
 # by modules and controllers
-db = SQLAlchemy(app)
 
 from app import views, models
 
