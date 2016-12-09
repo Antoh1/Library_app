@@ -1,24 +1,10 @@
 
 {% extends "base.html" %}
-
-{% block content %}
+{% block title %}Library_app | SignUp Page{% endblock %}
+{% block page_content %}
 <div class="container panel panel-success margin-top">
-<form method="POST" action="" accept-charset="UTF-8" role="form">
-      {{ form.csrf_token }}
-      <div class="container panel panel-success margin-top">
-        <h2>Fill the Form To SignUP<h2><br>
-        <h3>Name</h3><br>
-        <p>{{ form.name(size=50, placeholder="Your Name") }} </p>
-        <h3>Email Address</h3><br>
-        <p>{{ form.email(size=50, placeholder="Your Email Address") }} </p>
-        <h3>ID Number</h3><br>
-        <p>{{ form.id_no(size=50, placeholder="Your ID Number") }} </p>
-        <h3>Password</h3><br>
-        <p>{{ form.password(size=50, placeholder="Your Password") }} </p>
-        <h3>Confirm Password</h3><br>
-        <p>{{ form.password2(size=50, placeholder="Your Password") }} </p>
-        <button type="submit" class="btn btn-success">SignUp</button>
-      </div>
-    </form>
+    <div align="center" class=" col-md-5 container panel panel-success margin-top">
+        	{{ wtf.quick_form(form) }}
+    </div>
   </div>
-{% endblock %}    
+{% endblock %}
