@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
-{% block content %}
+{% block title %}Library_app | Admin Login{% endblock %}
+{% block page_content %}
 <h1>Admin Panel Login</h1><br>
 <div class="container panel panel-success margin-top">
     <form method="POST" action="" accept-charset="UTF-8" role="form">
@@ -8,8 +9,8 @@
     		<p>{{form.email(size=30, placeholder='Admin email address')}}</p>
     		<p>{{form.password(size=30, placeholder='Admin Password')}}</p>
     		<button type="submit" class="btn btn-success">Login</button>
-    	</div>	
-              
+    	</div>
+
 	</form>
-</div>	
+</div>
 {% endblock %}
