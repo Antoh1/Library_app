@@ -1,15 +1,10 @@
-{% extends 'base.html'%}
-{% block content %}
-<h1>Login To Access Library Services</h1><br>
-<div class="container panel panel-success margin-top">
-    <form method="POST" action="" accept-charset="UTF-8" role="form">
-    	{{ form.csrf_token }}
-    	<div class="container panel panel-success margin-top">
-    		<p>{{form.email(size=30, placeholder='Your email address')}}</p>
-    		<p>{{form.password(size=30, placeholder='Your Password')}}</p>
-    		<button type="submit" class="btn btn-success">Login</button>
-    	</div>	
-              
-	</form>
+{% extends 'base.html' %}
+{% block title %}Library_app | User Login{% endblock %}
+{% block page_content %}
+<div class="page-header">
+<h1 class="text-info">Login To Access Library Services</h1>
+</div>
+<div class=" col-md-5 container panel panel-success margin-top">
+    	{{ wtf.quick_form(form) }}
 </div>
 {% endblock %}
