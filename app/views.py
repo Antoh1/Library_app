@@ -70,6 +70,7 @@ def admin_login():
 
     error = None
     admin_form = LoginForm(request.form)
+    add_form = AddBook(request.form)
     if request.method == 'POST':
         if admin_form.validate_on_submit():
             if request.form['email'] != 'admin@gmail.com' or request.form['password'] != 'admin':
@@ -77,10 +78,10 @@ def admin_login():
             else:
                 session['logged_in']=True
                 flash('You are logged in as Library Admin')
-                return redirect(url_for('add_Book'))
+                return render_template('admin_dashboard.html', form=add_form)
         else:
             flash('Enter valid Admin email address and password combination')
-            render_template('admin_login.html', form=admin_form, error=error)
+            return render_template('admin_login.html', form=admin_form, error=error)
     return render_template('admin_login.html', form=admin_form, error=error)
 
 @app.route('/logout')
