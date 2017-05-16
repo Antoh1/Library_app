@@ -20,42 +20,42 @@ class User(db.Model, UserMixin):
     # User Name
     name = db.Column(db.String,  nullable=False)
 
-    # Identification Data: email , id_no and password 
+    # Identification Data: email , id_no and password
     email    = db.Column(db.String,  index=True, unique=True)
 
     id_no    = db.Column(db.Integer, nullable=False, unique=True)
 
     password_hash = db.Column(db.String, nullable=True)
-    
+
     def __init__(self, name, email, id_no, password):
         self.name = name
         self.email = email
         self.id_no = id_no
         self.password_set(password)
-   
+
     #property checking for hashable password input
-    @property   
-    def password(self):        
+    @property
+    def password(self):
         raise AttributeError('password is not a readable attribute')
-        
-        
+
+
     def password_set(self, password):
-        #method to encrypt password stored in database   
+        #method to encrypt password stored in database
         self.password_hash = generate_password_hash(password)
 
     def verify_password(self, password):
         #method to compare encrypted password in database and post request
-        return check_password_hash(self.password_hash, password) 
+        return check_password_hash(self.password_hash, password)
 
-    @loginManager.user_loader 
+    @loginManager.user_loader
     def load_user(user_id):
-        #method to validate user login    
-        return User.query.get(int(user_id))     
+        #method to validate user login
+        return User.query.get(int(user_id))
 
 
 
     def __repr__(self):
-        return '<User %r>' % (self.name) 
+        return '<User %r>' % (self.name)
 
 class AvailableBooks(db.Model):
     """This class creates available_books database table instance
@@ -72,7 +72,7 @@ class AvailableBooks(db.Model):
     book_category = db.Column(db.Text, nullable=False)
 
 
-    
+
     def __init__(self, bookName, bookDescription, bookCategory):
 
         self.book_name = bookName
@@ -80,7 +80,7 @@ class AvailableBooks(db.Model):
         self.book_category = bookCategory
 
     def __repr__(self):
-        return '<Book %r>' % (self.book_name) 
+        return '<Book %r>' % (self.book_name)
 
 
 class BorrowedBooks(db.Model):
@@ -129,9 +129,4 @@ class TotalBooks(db.Model):
         self.book_quantity = bookQuantity
 
     def __repr__(self):
-        return '<Book %r>' % (self.book_name)    
-
-
-
-
-
+        return '<Book %r>' % (self.book_name)
