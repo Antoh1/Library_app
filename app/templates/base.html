@@ -1,4 +1,4 @@
-{% extends "bootstrap/base.html" %}
+{% extends 'bootstrap/base.html' %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block title %}Library_app{% endblock %}
   {% block navbar %}
@@ -14,10 +14,12 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
   		{% if current_user.is_authenticated %}
+        <div class="row push-right">
   				<ul class="nav navbar-nav navbar-right">
                         <li><h3 class="text-info waves-effect waves-light">{{ current_user.name }}</h3></li>
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        <li class="col-md-offset-1"><h3 class="text-info waves-effect waves-light"><a href="{{ url_for('logout') }}">Logout</a></h3></li>
                 </ul>
+        </div>
   		{% endif %}
   		</div>
   	</div>
