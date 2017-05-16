@@ -49,3 +49,4 @@ class AddBook(Form):
     book_name = TextField('Book Name', validators=[DataRequired()])
     book_desc = TextField('Book Description', validators=[DataRequired()])
     book_category = TextField('Book Category', validators=[DataRequired()])
+    submit = SubmitField('Add')
